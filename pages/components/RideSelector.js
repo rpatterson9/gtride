@@ -7,27 +7,33 @@ const carList = [
   {
     "imgUrl": "https://i.ibb.co/cyvcpfF/gtmfpX.png",
     "service": "gtmfpX",
+    "min": 10,
     "multiplier": 1
   },
   {
     "imgUrl": "https://i.ibb.co/YDYMKny/gtmfpXl.png",
     "service": "gtmfpXL",
-    "multiplier": 1.5
+    "multiplier": 1.5,
+    "min": 1,
+
   },
   {
     "imgUrl": "https://i.ibb.co/Xx4G91m/uberblack.png",
     "service": "bbcX",
-    "multiplier": 666
+    "multiplier": 666,
+    "min": 666
   },
   {
     "imgUrl": "https://i.ibb.co/cyvcpfF/gtmfpX.png",
     "service": "cuntfortX",
-    "multiplier": 66
+    "multiplier": 66,
+    "min": 0
   },
   {
     "imgUrl": "https://i.ibb.co/1nStPWT/uberblacksuv.png",
     "service": "Black SUV",
-    "multiplier": 2112.8
+    "multiplier": 2112.8,
+    "min": 10000
   }
 ]
 
@@ -66,7 +72,7 @@ const RideSelector = (props) => {
             <CarImage src={car.imgUrl} />
             <CarDetails>
               <Service>{car.service}</Service>
-              <Time>5 min away</Time>
+              <Time>{car.min} mins away</Time>
             </CarDetails>
             <Price>${((duration / 100) * car.multiplier).toFixed(2)}</Price>
           </Car>
