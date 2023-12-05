@@ -73,7 +73,7 @@ export default function Home() {
 }
 
 const Wrapper = tw.div`
-flex flex-col h-screen
+flex flex-col h-screen bg-black
 `;
 
 const ActionItems = tw.div`
@@ -81,7 +81,7 @@ flex-1 p-4
 `;
 
 const Header = tw.div`
-flex justify-between items-center
+flex justify-between items-center bg-black
 `;
 
 const ActionButtons = tw.div`

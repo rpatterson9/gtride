@@ -56,11 +56,11 @@ const Search = () => {
 export default Search;
 
 const ConfirmButtonContainer = tw.div`
-bg-black mx-4 mt-8 text-white px-2 py-3 flex justify-center rounded-lg  text-1xl cursor-pointer
+bg-black mx-4 mt-8 text-white px-2 py-3 flex justify-center rounded-lg  text-1xl cursor-pointer bg-blue-500
 `;
 
 const Wrapper = tw.div`
-bg-gray-200 flex flex-col h-screen
+bg-black flex flex-col h-screen
 `;
 
 const ButtonContainer = tw.div`

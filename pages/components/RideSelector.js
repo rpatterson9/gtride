@@ -17,17 +17,17 @@ const carList = [
   {
     "imgUrl": "https://i.ibb.co/Xx4G91m/uberblack.png",
     "service": "bbcX",
-    "multiplier": 2
+    "multiplier": 666
   },
   {
     "imgUrl": "https://i.ibb.co/cyvcpfF/gtmfpX.png",
     "service": "cuntfortX",
-    "multiplier": 1.2
+    "multiplier": 66
   },
   {
     "imgUrl": "https://i.ibb.co/1nStPWT/uberblacksuv.png",
     "service": "Black SUV",
-    "multiplier": 2.8
+    "multiplier": 2112.8
   }
 ]
 
@@ -79,7 +79,7 @@ const RideSelector = (props) => {
 export default RideSelector;
 
 const Price = tw.div`
-text-sm
+text-sm text-white
 `;
 
 const Time = tw.div`
@@ -103,7 +103,7 @@ flex items-center p-4
 `;
 
 const CarList = tw.div`
-flex-1  overflow-y-scroll no-scrollbar
+flex-1  overflow-y-scroll no-scrollbar  text-gray-500
 `;
 
 const Title = tw.div`
@@ -111,5 +111,5 @@ text-gray-500 text-center text-xs py-2 border-b
 `;
 
 const Wrapper = tw.div`
-flex flex-col overflow-y-scroll no-scrollbar
+flex flex-col overflow-y-scroll no-scrollbar bg-black
 `;

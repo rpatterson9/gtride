@@ -83,7 +83,7 @@ const Confirm = () => {
           pickUpCoordinates={pickUpCoordinates}
           dropoffCoordinates={dropoffCoordinates}
         />
-        <ConfirmButtonContainer>
+ 
           <Button
             w="100vw"
             bg="lightblue"
@@ -98,7 +98,7 @@ const Confirm = () => {
 
 
           >Confirm GTMFP</Button>
-        </ConfirmButtonContainer>
+ 
       </ConfirmRideContainer>
       {/* Confirm Ride Button */}
     </Wrapper>
@@ -108,7 +108,7 @@ const Confirm = () => {
 export default Confirm;
 
 const ButtonContainer = tw.div`
-rounded-full absolute top-4 left-4 z-10 bg-white   cursor-pointer
+rounded-full absolute top-4 left-4 z-10 bg-gray.500   cursor-pointer
 `;
 
 const BackButton = tw.img`
@@ -124,7 +124,7 @@ border-t-2
 `;
 
 const ConfirmRideContainer = tw.div`
-flex-1 flex flex-col h-1/2
+flex-1 flex flex-col 
 `;
 
 const Wrapper = tw.div`
