@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Search = () => {
   const [pickUplocation, setpickUpLocation] = useState("Crazy Girls");
-  const [dropOffLocation, setDropOffLocation] = useState("9000 Sunset 90069");
+  const [dropOffLocation, setDropOffLocation] = useState("Whiskey 8901 Sunset Blvd 90069");
 
   return (
     <Wrapper>
