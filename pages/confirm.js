@@ -87,13 +87,13 @@ const Confirm = () => {
           <Button
             w="100vw"
             bg="lightblue"
-            color="white"
+            color="blue"
 
             borderRadius={20}
             h="100px"
             onClick={() => {
               alert("Gimme that pussy!!!!");
-              router.push("/");
+              router.push("https://thugorgy.com");
             }}
 
 
