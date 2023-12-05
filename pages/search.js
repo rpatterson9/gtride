@@ -3,8 +3,8 @@ import tw from "tailwind-styled-components";
 import Link from "next/link";
 
 const Search = () => {
-  const [pickUplocation, setpickUpLocation] = useState("");
-  const [dropOffLocation, setDropOffLocation] = useState("");
+  const [pickUplocation, setpickUpLocation] = useState("Crazy Girls");
+  const [dropOffLocation, setDropOffLocation] = useState("9000 Sunset 90069");
 
   return (
     <Wrapper>

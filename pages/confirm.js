@@ -5,6 +5,17 @@ import Map from "./components/Map";
 import RideSelector from "./components/RideSelector";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import {
+  Box,
+  Heading,
+  Flex,
+  Text,
+  Button,
+  Input,
+} from "@chakra-ui/react";
+
+
+
 
 const Confirm = () => {
   const router = useRouter();
@@ -17,11 +28,11 @@ const Confirm = () => {
     const pickUp = pickup ?? "Santa Monica";
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` +
-        new URLSearchParams({
-          access_token:
-            "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA",
-          limit: 1,
-        })
+      new URLSearchParams({
+        access_token:
+          "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA",
+        limit: 1,
+      })
     )
       .then((response) => {
         return response.json();
@@ -35,11 +46,11 @@ const Confirm = () => {
     const dropOff = dropoff ?? "Los Angeles";
     fetch(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${dropOff}.json?` +
-        new URLSearchParams({
-          access_token:
-            "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA",
-          limit: 1,
-        })
+      new URLSearchParams({
+        access_token:
+          "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA",
+        limit: 1,
+      })
     )
       .then((response) => {
         return response.json();
@@ -73,7 +84,20 @@ const Confirm = () => {
           dropoffCoordinates={dropoffCoordinates}
         />
         <ConfirmButtonContainer>
-          <ConfirmButton>Confirm GTMFP</ConfirmButton>
+          <Button
+            w="100vw"
+            bg="lightblue"
+            color="white"
+
+            borderRadius={20}
+            h="100px"
+            onClick={() => {
+              alert("Gimme that pussy!!!!");
+              router.push("/");
+            }}
+
+
+          >Confirm GTMFP</Button>
         </ConfirmButtonContainer>
       </ConfirmRideContainer>
       {/* Confirm Ride Button */}
@@ -84,7 +108,7 @@ const Confirm = () => {
 export default Confirm;
 
 const ButtonContainer = tw.div`
-rounded-full absolute top-4 left-4 z-10 bg-white shadow-md cursor-pointer
+rounded-full absolute top-4 left-4 z-10 bg-white   cursor-pointer
 `;
 
 const BackButton = tw.img`
