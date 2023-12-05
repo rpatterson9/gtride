@@ -3,13 +3,13 @@ import { useEffect } from "react";
 import tw from "tailwind-styled-components";
 import mapboxgl from "!mapbox-gl";
 mapboxgl.accessToken =
-  "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA";
+  "pk.eyJ1Ijoicm9icDkxMTEiLCJhIjoiY2xoYjBtb2duMGJ4azNkazRxeTVpNTN6YyJ9.2uMLBPyRsyiLyhcHVBQYyQ";
 
 const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/drakosi/ckvcwq3rwdw4314o3i2ho8tph",
+      style: "mapbox://styles/robp9111/clhb13t2o00cp01pz5il89x91",
       center: [-99.29011, 39.39172],
       zoom: 3,
     });
