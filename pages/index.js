@@ -33,18 +33,18 @@ export default function Home() {
     return () => unsubscribe();
   }, []);
   return (
-    <Wrapper>
-      <Map />
+    <><Map /><Wrapper>
 
-       <br />  <br />
+
+      <br />  <br />
 
       <ActionItems>
         <Header>
-        <Heading
-        color={"lightblue"}
-        letterSpacing={8}
-        
-        >GTMFRide </Heading>
+          <Heading
+            color={"lightblue"}
+            letterSpacing={8}
+
+          >GTMFRide </Heading>
           <Profile>
             <Name>{user && user?.name}</Name>
             <UserImage
@@ -55,25 +55,25 @@ export default function Home() {
         </Header>
         <br />  <br />  <br />
 
-          <Link href="/search">
-            <Center>
-      <Button
-      w="300px"
+        <Link href="/search">
+          <Center>
+            <Button
+              w="300px"
 
-      onClick={() => router.push("/search")}> 
+              onClick={() => router.push("/search")}>
               <ActionButtonImage src="https://i.ibb.co/cyvcpfF/uberx.png" />
               Ride
             </Button>
-            </Center>
-          </Link>
-     
+          </Center>
+        </Link>
+
       </ActionItems>
-    </Wrapper>
+    </Wrapper></>
   );
 }
 
 const Wrapper = tw.div`
-flex flex-col h-screen bg-black
+flex flex-col bg-black
 `;
 
 const ActionItems = tw.div`

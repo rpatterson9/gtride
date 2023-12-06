@@ -30,7 +30,7 @@ const Confirm = () => {
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${pickUp}.json?` +
       new URLSearchParams({
         access_token:
-          "pk.eyJ1IjoibmF6YXJpeTE5OTUiLCJhIjoiY2t2bGlmdW12MHZlcDJ1bzA5OHh3NDIxeCJ9.li8l-1u52aCFd2ZdW-1IaA",
+        "pk.eyJ1Ijoicm9icDkxMTEiLCJhIjoiY2xoYjBtb2duMGJ4azNkazRxeTVpNTN6YyJ9.2uMLBPyRsyiLyhcHVBQYyQ",
         limit: 1,
       })
     )
@@ -74,10 +74,12 @@ const Confirm = () => {
           <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
         </Link>
       </ButtonContainer>
-      <Map style={{ width: "50vw", height: "600px" }}  
+    
+      <Map style={{ width: "100vw", height: "600px" }}  
         pickUpCoordinates={pickUpCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
+ 
       <ConfirmRideContainer>
         <RideSelector
           pickUpCoordinates={pickUpCoordinates}
