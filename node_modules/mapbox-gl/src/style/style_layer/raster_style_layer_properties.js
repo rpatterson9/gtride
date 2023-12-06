@@ -17,9 +17,19 @@ import type Formatted from '../../style-spec/expression/types/formatted.js';
 
 import type ResolvedImage from '../../style-spec/expression/types/resolved_image.js';
 
+export type LayoutProps = {|
+    "visibility": DataConstantProperty<"visible" | "none">,
+|};
+
+const layout: Properties<LayoutProps> = new Properties({
+    "visibility": new DataConstantProperty(styleSpec["layout_raster"]["visibility"]),
+});
 
 export type PaintProps = {|
     "raster-opacity": DataConstantProperty<number>,
+    "raster-color": ColorRampProperty,
+    "raster-color-mix": DataConstantProperty<[number, number, number, number]>,
+    "raster-color-range": DataConstantProperty<[number, number]>,
     "raster-hue-rotate": DataConstantProperty<number>,
     "raster-brightness-min": DataConstantProperty<number>,
     "raster-brightness-max": DataConstantProperty<number>,
@@ -31,6 +41,9 @@ export type PaintProps = {|
 
 const paint: Properties<PaintProps> = new Properties({
     "raster-opacity": new DataConstantProperty(styleSpec["paint_raster"]["raster-opacity"]),
+    "raster-color": new ColorRampProperty(styleSpec["paint_raster"]["raster-color"]),
+    "raster-color-mix": new DataConstantProperty(styleSpec["paint_raster"]["raster-color-mix"]),
+    "raster-color-range": new DataConstantProperty(styleSpec["paint_raster"]["raster-color-range"]),
     "raster-hue-rotate": new DataConstantProperty(styleSpec["paint_raster"]["raster-hue-rotate"]),
     "raster-brightness-min": new DataConstantProperty(styleSpec["paint_raster"]["raster-brightness-min"]),
     "raster-brightness-max": new DataConstantProperty(styleSpec["paint_raster"]["raster-brightness-max"]),
@@ -43,6 +56,6 @@ const paint: Properties<PaintProps> = new Properties({
 // Note: without adding the explicit type annotation, Flow infers weaker types
 // for these objects from their use in the constructor to StyleLayer, as
 // {layout?: Properties<...>, paint: Properties<...>}
-export default ({ paint }: $Exact<{
-  paint: Properties<PaintProps>
+export default ({ paint, layout }: $Exact<{
+  paint: Properties<PaintProps>, layout: Properties<LayoutProps>
 }>);

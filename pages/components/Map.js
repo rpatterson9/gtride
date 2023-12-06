@@ -9,7 +9,7 @@ const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: "mapbox://styles/robp9111/clhb13t2o00cp01pz5il89x91",
+      style: 'mapbox://styles/mapbox/outdoors-v12?optimize=true',
       center: [-99.29011, 39.39172],
       zoom: 4,
     });
@@ -39,5 +39,5 @@ const Map = (props) => {
 export default Map;
 
 const Wrapper = tw.div`
-flex-1 h-1/2 mt-1
+flex-1 h-1/2 mt-2
 `;

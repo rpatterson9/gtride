@@ -1,6 +1,7 @@
 // @flow
 
 import {Color} from './values.js';
+import type {Expression} from './expression.js';
 
 import type Point from '@mapbox/point-geometry';
 import type {FormattedSection} from './types/formatted.js';
@@ -19,10 +20,11 @@ class EvaluationContext {
     canonical: null | CanonicalTileID;
     featureTileCoord: ?Point;
     featureDistanceData: ?FeatureDistanceData;
+    options: ?Map<string, Expression>;
 
     _parseColorCache: {[_: string]: ?Color};
 
-    constructor() {
+    constructor(options?: ?Map<string, Expression>) {
         this.globals = (null: any);
         this.feature = null;
         this.featureState = null;
@@ -32,6 +34,7 @@ class EvaluationContext {
         this.canonical = null;
         this.featureTileCoord = null;
         this.featureDistanceData = null;
+        this.options = options;
     }
 
     id(): number | null {
@@ -52,6 +55,10 @@ class EvaluationContext {
 
     properties(): {[string]: any} {
         return (this.feature && this.feature.properties) || {};
+    }
+
+    measureLight(_: string): number {
+        return this.globals.brightness || 0;
     }
 
     distanceFromCenter(): number {
@@ -83,6 +90,10 @@ class EvaluationContext {
             cached = this._parseColorCache[input] = Color.parse(input);
         }
         return cached;
+    }
+
+    getConfig(id: string): ?Expression {
+        return this.options ? this.options.get(id) : null;
     }
 }
 
