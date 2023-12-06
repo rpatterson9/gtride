@@ -19,3 +19,14 @@ a {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+/* styles.css */
+.map-mobile {
+  height: 800px !important;
+
+}
+
+@media (min-width: 768px) { /* Adjust the breakpoint as needed */
+  .map-mobile {
+    height: 800px !important;
+  }
+}

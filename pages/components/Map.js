@@ -9,7 +9,7 @@ const Map = (props) => {
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: "map",
-      style: 'mapbox://styles/mapbox/outdoors-v12?optimize=true',
+
       center: [-99.29011, 39.39172],
       zoom: 4,
     });
@@ -21,13 +21,14 @@ const Map = (props) => {
     if (props.dropoffCoordinates) {
       addToMap(map, props.dropoffCoordinates);
     }
-
+ console.log(props.pickUpCoordinates);
     if (props.pickUpCoordinates && props.dropoffCoordinates) {
       map.fitBounds([props.pickUpCoordinates, props.dropoffCoordinates], {
         padding: 60,
       });
     }
   }, [props.pickUpCoordinates, props.dropoffCoordinates]);
+
 
   const addToMap = (map, coordinates) => {
     const marker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);

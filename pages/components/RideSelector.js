@@ -101,7 +101,7 @@ flex-1
 `;
 
 const CarImage = tw.img`
-h-14 mr-4
+h-2 mr-4
 `;
 
 const Car = tw.div`
@@ -109,13 +109,14 @@ flex items-center p-4
 `;
 
 const CarList = tw.div`
-flex-1  overflow-y-scroll no-scrollbar  text-gray-500
+flex-1 overflow-y-scroll no-scrollbar  text-gray-500
 `;
+
 
 const Title = tw.div`
 text-gray-500 text-center text-xs py-2 border-b
 `;
 
 const Wrapper = tw.div`
-flex flex-col overflow-y-scroll no-scrollbar bg-black
+flex flex-col no-scrollbar bg-black
 `;
