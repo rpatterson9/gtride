@@ -19,7 +19,7 @@ const Login = () => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
+      if (!user) {
         router.push("/");
       }
     });

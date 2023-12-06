@@ -11,7 +11,7 @@ const Map = (props) => {
       container: "map",
       style: "mapbox://styles/robp9111/clhb13t2o00cp01pz5il89x91",
       center: [-99.29011, 39.39172],
-      zoom: 3,
+      zoom: 4,
     });
 
     if (props.pickUpCoordinates) {
@@ -39,5 +39,5 @@ const Map = (props) => {
 export default Map;
 
 const Wrapper = tw.div`
-flex-1 h-1/2
+flex-1 h-1/2 mt-1
 `;

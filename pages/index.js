@@ -27,7 +27,7 @@ export default function Home() {
         });
         console.log(user);
       } else {
-        router.push("/login");
+        router.push("/");
       }
     });
     return () => unsubscribe();
